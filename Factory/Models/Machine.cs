@@ -6,6 +6,12 @@ public class Machine
 {
     [Key]
     public int MachineId { get; set; }
-    [Required]
+    [Required] 
     public string MachineName { get; set; }
+    public string Description { get; set; }
+    public virtual ICollection<EngineerMachine> JoinEntities { get; set; }
+    public Machine()
+    {
+        this.JoinEntities = new HashSet<EngineerMachine>();
+    }
 }
