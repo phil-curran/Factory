@@ -1,8 +1,5 @@
-using Microsoft.EntityFrameworkCore;
-
 namespace Factory.Models;
 
-[Keyless]
 public class EngineerMachine
 {
     // Engineer
@@ -14,6 +11,4 @@ public class EngineerMachine
     public string MachineName { get; set; }
     public string Description { get; set; }
     // Virtual
-    public virtual Engineer Engineer { get; set; }
-    public virtual Machine Machine { get; set; }
 }

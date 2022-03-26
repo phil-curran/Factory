@@ -8,8 +8,9 @@ public class Machine
     public int MachineId { get; set; }
     [Required] 
     public string MachineName { get; set; }
+    [Required] 
     public string Description { get; set; }
-    public virtual ICollection<EngineerMachine> JoinEntities { get; set; }
+    public virtual ICollection<EngineerMachine> JoinEntities { get; }
     public Machine()
     {
         this.JoinEntities = new HashSet<EngineerMachine>();

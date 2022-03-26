@@ -9,14 +9,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4d75400e-46bc-4456-b4df-48d4236b60df" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Factory/Models/EngineerMachine.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Factory/Models/FactoryContext.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Factory/Migrations/20220326204910_CreateInitial.Designer.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Factory/Migrations/20220326204910_CreateInitial.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Factory/Migrations/ApplicationDbContextModelSnapshot.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Factory/Models/DesignTimeDbContextFactory.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Factory/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Factory/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Factory/Data/ApplicationDbContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Factory/Data/ApplicationDbContext.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Factory/Factory.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Factory/Factory.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Factory/Controllers/HomeController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Factory/Controllers/HomeController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Factory/Models/Engineer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Factory/Models/Engineer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Factory/Models/EngineerMachine.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Factory/Models/EngineerMachine.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Factory/Models/ErrorViewModel.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Factory/Models/FactoryContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Factory/Models/FactoryContext.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Factory/Models/Machine.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Factory/Models/Machine.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Factory/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Factory/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Factory/Views/Shared/Error.cshtml" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,6 +42,7 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
@@ -90,7 +95,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1648322884238</updated>
-      <workItem from="1648322894355" duration="4212000" />
+      <workItem from="1648322894355" duration="6718000" />
     </task>
     <servers />
   </component>
@@ -112,6 +117,7 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
   </component>
 </project>
