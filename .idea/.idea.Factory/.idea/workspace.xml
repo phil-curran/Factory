@@ -9,18 +9,25 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4d75400e-46bc-4456-b4df-48d4236b60df" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Factory/Migrations/20220326204910_CreateInitial.Designer.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Factory/Migrations/20220326204910_CreateInitial.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Factory/Migrations/ApplicationDbContextModelSnapshot.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Factory/Models/DesignTimeDbContextFactory.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Factory/Controllers/EngineersController.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Factory/Controllers/MachinesController.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Factory/Views/Engineers/AddEngineer.cshtml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Factory/Views/Engineers/AddMachine.cshtml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Factory/Views/Engineers/Create.cshtml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Factory/Views/Engineers/Delete.cshtml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Factory/Views/Engineers/Details.cshtml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Factory/Views/Engineers/Edit.cshtml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Factory/Views/Engineers/Index.cshtml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Factory/Views/Machines/AddEngineer.cshtml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Factory/Views/Machines/AddMachine.cshtml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Factory/Views/Machines/Create.cshtml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Factory/Views/Machines/Delete.cshtml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Factory/Views/Machines/Details.cshtml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Factory/Views/Machines/Edit.cshtml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Factory/Views/Machines/Index.cshtml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Factory/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Factory/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Factory/Controllers/HomeController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Factory/Controllers/HomeController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Factory/Models/Engineer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Factory/Models/Engineer.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Factory/Models/EngineerMachine.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Factory/Models/EngineerMachine.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Factory/Models/ErrorViewModel.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Factory/Models/FactoryContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Factory/Models/FactoryContext.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Factory/Models/Machine.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Factory/Models/Machine.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Factory/Views/Shared/Error.cshtml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Factory/Factory.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Factory/Factory.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Factory/Views/Shared/_Layout.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/Factory/Views/Shared/_Layout.cshtml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -95,7 +102,8 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1648322884238</updated>
-      <workItem from="1648322894355" duration="6718000" />
+      <workItem from="1648322894355" duration="7358000" />
+      <workItem from="1648330937209" duration="370000" />
     </task>
     <servers />
   </component>
@@ -103,7 +111,7 @@
     <option name="version" value="3" />
   </component>
   <component name="UnityCheckinConfiguration" checkUnsavedScenes="true" />
-  <component name="UnityProjectConfiguration" hasMinimizedUI="null" />
+  <component name="UnityProjectConfiguration" hasMinimizedUI="false" />
   <component name="UnityUnitTestConfiguration" currentTestLauncher="NUnit" />
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
