@@ -9,11 +9,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4d75400e-46bc-4456-b4df-48d4236b60df" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Factory/Data/ApplicationDbContext.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Factory/Models/Engineer.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Factory/Models/Machine.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Factory/Models/EngineerMachine.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Factory/Models/FactoryContext.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Factory/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Factory/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Factory/Models/ErrorViewModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Factory/Models/ErrorViewModel.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Factory/Data/ApplicationDbContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Factory/Data/ApplicationDbContext.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Factory/Factory.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Factory/Factory.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Factory/Models/Engineer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Factory/Models/Engineer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Factory/Models/Machine.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Factory/Models/Machine.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Factory/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Factory/Program.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -88,7 +90,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1648322884238</updated>
-      <workItem from="1648322894355" duration="1378000" />
+      <workItem from="1648322894355" duration="4212000" />
     </task>
     <servers />
   </component>
