@@ -5,16 +5,6 @@ namespace Factory.Controllers;
 
 public class EngineersController : Controller
 {
-    public IActionResult AddEngineer()
-    {
-        return View();
-    }
-    
-    public IActionResult AddMachine()
-    {
-        return View();
-    }
-    
     public IActionResult Create()
     {
         return View();

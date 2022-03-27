@@ -1,6 +1,4 @@
-﻿using System.Diagnostics;
-using Microsoft.AspNetCore.Mvc;
-using Factory.Models;
+﻿using Microsoft.AspNetCore.Mvc;
 
 namespace Factory.Controllers;
 
@@ -14,6 +12,11 @@ public class HomeController : Controller
     }
 
     public IActionResult Index()
+    {
+        return View();
+    }
+    
+    public IActionResult Test()
     {
         return View();
     }
