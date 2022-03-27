@@ -1,6 +1,5 @@
 using Factory.Data;
 using Microsoft.EntityFrameworkCore;
-using Factory.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 

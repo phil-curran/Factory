@@ -10,16 +10,4 @@ public class ApplicationDbContext : DbContext
     }
     public DbSet<Engineer> Engineers { get; set; }
     public DbSet<Machine> Machines { get; set; }
-    
-    // protected override void OnModelCreating(ModelBuilder modelBuilder)
-    // {
-    //     modelBuilder
-    //         .Entity<EngineerMachine>(
-    //             eb =>
-    //             {
-    //                 eb.HasNoKey();
-    //                 eb.Property(v => v.EngineerName).HasColumnName("EngineerName");
-    //             });
-    // }
-    
 }
