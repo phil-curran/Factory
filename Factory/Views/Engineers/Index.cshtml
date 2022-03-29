@@ -1,10 +1,38 @@
 @{
     ViewData["Title"] = "Engineer Index";
+    ViewData["Footer"] = "Views / Engineers / Index";
 }
+
+@model IEnumerable<Engineer>
 
 <div class="text-center">
     <h1 class="display-4">Engineer Index</h1>
-    
-    <p>Views / Engineers / Index</p>
-    
+
+        @if (!@Model.Any())
+        {
+          <p>No engineers have been added yet. </p>
+        }
+        else
+        {
+            <table class="table table-bordered table-striped">
+                <thead>
+                <tr>
+                    <th>Employee Id:</th>
+                    <th>Employee Name:</th>
+                    <th>Hire Date:</th>
+                </tr>
+                </thead>
+                <tbody>
+                @foreach (var obj in Model)
+                {
+                    <tr>
+                        <td>@obj.EngineerId</td>
+                        <td>@obj.EngineerName</td>
+                        <td>@obj.CreationDate</td>
+                    </tr>
+                }
+                </tbody>
+            </table>
+        }
+        
 </div>

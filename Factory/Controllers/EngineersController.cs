@@ -1,3 +1,4 @@
+using Factory.Data;
 using Microsoft.AspNetCore.Mvc;
 using Factory.Models;
 
@@ -5,6 +6,13 @@ namespace Factory.Controllers;
 
 public class EngineersController : Controller
 {
+    private readonly ApplicationDbContext _db;
+    
+    public EngineersController(ApplicationDbContext db)
+    {
+        _db = db;
+    }
+    
     public IActionResult Create()
     {
         return View();
@@ -27,6 +35,7 @@ public class EngineersController : Controller
     
     public IActionResult Index()
     {
-        return View();
+        IEnumerable<Engineer> engineerList = _db.Engineers;
+        return View(engineerList);
     }
 }

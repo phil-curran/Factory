@@ -1,7 +1,5 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Design;
-using Microsoft.Extensions.Configuration;
-using System.IO;
 
 namespace Factory.Models;
 
@@ -20,10 +18,6 @@ public class DesignTimeDbContextFactory : IDesignTimeDbContextFactory<FactoryCon
 
         return new FactoryContext(builder.Options);
     }
-    // public FactoryContext CreateDbContext(string[] args)
-    // {
-    //     // throw new NotImplementedException();
-    // }
 }
 
 
