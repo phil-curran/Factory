@@ -3,7 +3,16 @@
     ViewData["Footer"] = "Views / Engineers / Create";
 }
 
+@model Engineer
+
 <div class="text-center">
     <h1 class="display-4">Create Engineer</h1>
-
 </div>
+    
+@using (Html.BeginForm())
+{
+  @Html.LabelFor(model => model.EngineerName)
+  @Html.TextBoxFor(model => model.EngineerName)
+  
+  <input type="submit" value="Add Engineer" class="btn btn-primary" />
+}

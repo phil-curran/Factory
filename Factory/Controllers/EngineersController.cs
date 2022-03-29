@@ -17,6 +17,13 @@ public class EngineersController : Controller
     {
         return View();
     }
+    [HttpPost]
+    public IActionResult Create(Engineer obj)
+    {
+        _db.Engineers.Add(obj);
+        _db.SaveChanges();
+        return RedirectToAction("Index");
+    }
     
     public IActionResult Delete()
     {
