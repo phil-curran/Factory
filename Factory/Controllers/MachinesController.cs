@@ -26,9 +26,22 @@ public class MachinesController : Controller
         return RedirectToAction("Index");
     }
 
-    public IActionResult Delete()
+    public IActionResult Delete(int machineId)
     {
-        return View();
+        if (machineId == null || machineId == 0) return NotFound();
+        var machineFromDb = _db.Machines.Find(machineId);
+        if (machineFromDb == null) return NotFound();
+        return View(machineFromDb);
+    }
+
+    [HttpPost]
+    [ActionName("Delete")]
+    public IActionResult DeleteConfirmed(int machineId)
+    {
+        var machineFromDb = _db.Machines.Find(machineId);
+        _db.Machines.Remove(machineFromDb);
+        _db.SaveChanges();
+        return RedirectToAction("Index");
     }
 
     public IActionResult Details()
@@ -36,9 +49,26 @@ public class MachinesController : Controller
         return View();
     }
 
-    public IActionResult Edit()
+    public IActionResult Edit(int? machineId)
     {
-        return View();
+        if (machineId == null || machineId == 0) return NotFound();
+        var machineFromDb = _db.Machines.Find(machineId);
+        if (machineFromDb == null) return NotFound();
+        return View(machineFromDb);
+    }
+
+    [HttpPost]
+    public IActionResult Edit(Machine obj)
+    {
+        if (ModelState.IsValid)
+        {
+            _db.Machines.Update(obj);
+            _db.SaveChanges();
+            TempData["success"] = "Machine updated successfully";
+            return RedirectToAction("Index");
+        }
+
+        return View(obj);
     }
 
     public IActionResult Index()

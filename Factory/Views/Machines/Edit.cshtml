@@ -1,10 +1,21 @@
 @{
-    ViewData["Title"] = "Edit Machine";
+	ViewData["Title"] = "Edit Machine";
+	ViewData["Footer"] = "Views / Machines / Edit";
 }
 
+@model Machine
+
 <div class="text-center">
-    <h1 class="display-4">Edit Machine</h1>
-    
-    <p>Views / Machines / Edit</p>
-    
+	<h1 class="display-4">Edit Machine</h1>
 </div>
+
+<hr/>
+
+@using (Html.BeginForm())
+{
+	@Html.LabelFor(model => model.MachineName)
+	@Html.TextBoxFor(model => model.MachineName)
+	@Html.LabelFor(model => model.Description)
+	@Html.TextBoxFor(model => model.Description)
+	<input type="submit" value="Edit Machine" class="btn btn-primary"/>
+}

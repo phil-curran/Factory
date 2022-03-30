@@ -1,36 +1,46 @@
-@using Factory.Models;
-
 @{
-    ViewData["Title"] = "Machine Details";
-    Layout = "_Layout";
+	ViewData["Title"] = "Machine Details";
+	ViewData["Footer"] = "Views / Machines / Details";
 }
 
-@model Factory.Models.Machine
+@model IEnumerable<Machine>
 
 <div class="text-center">
-    <h1 class="display-4">Machine Details</h1>
+	<h1 class="display-4">Machine Details</h1>
 </div>
-<hr />
-<h3>@Html.DisplayNameFor(model => model.Description): @Html.DisplayFor(model => model.Description)</h3>
 
-@* @if(@Model.JoinEntities.Count == 0) *@
-@* { *@
-@*     <p>This item does not belong to any categories</p> *@
-@* } *@
-@* else *@
-@* { *@
-@*     <h4>Categories the item belongs to:</h4> *@
-     <ul>
-        @foreach (var join in Model.JoinEntities)
-        {
-            <li>@join.Engineer.EngineerName</li>
-        }
-    </ul>
-@* } *@
-        
-<p>@Html.ActionLink("Back to list", "Index")</p>
-<p>@Html.ActionLink("Edit Item", "Edit", new { id = Model.MachineId })</p>
-<p>@Html.ActionLink("Delete Item", "Delete", new { id = Model.MachineId })</p>
-        
-<p>Views / Machines / Details</p>
+<hr/>
 
+@if (!Model.Any())
+{
+	<p>No machines have been added yet.</p>
+}
+else
+{
+	<table class="table table-bordered table-striped">
+		<thead>
+		<tr>
+			<th>Machine Id:</th>
+			<th>Machine Name:</th>
+			<th>Description:</th>
+			<th>Engineer Assigned:</th>
+			<th>Actions</th>
+		</tr>
+		</thead>
+		<tbody>
+		@foreach (var obj in Model)
+		{
+			<tr>
+				<td>@obj.MachineId</td>
+				<td>@obj.MachineName</td>
+				<td>@obj.Description</td>
+				<td>Engineer</td>
+				<td>
+					<a class="btn btn-primary" asp-area="" asp-controller="Machines" asp-action="Edit" asp-route-machineId="@obj.MachineId">Edit</a>
+					<a class="btn btn-danger" asp-area="" asp-controller="Machines" asp-action="Delete" asp-route-machineId="@obj.MachineId">Delete</a>
+				</td>
+			</tr>
+		}
+		</tbody>
+	</table>
+}
