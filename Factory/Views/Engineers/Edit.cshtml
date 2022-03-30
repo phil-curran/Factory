@@ -1,9 +1,17 @@
 @{
-    ViewData["Title"] = "Edit Engineer";
-    ViewData["Footer"] = "Views / Engineers / Edit";
+	ViewData["Title"] = "Edit Engineer";
+	ViewData["Footer"] = "Views / Engineers / Edit";
 }
 
+@model Engineer
+
 <div class="text-center">
-    <h1 class="display-4">Edit Delete</h1>
-    
+	<h1 class="display-4">Edit Engineer</h1>
 </div>
+
+@using (Html.BeginForm())
+{
+	@Html.LabelFor(model => model.EngineerName)
+	@Html.TextBoxFor(model => model.EngineerName)
+	<input type="submit" value="Edit Engineer" class="btn btn-primary"/>
+}

@@ -1,25 +1,45 @@
 @{
-  Layout = "_Layout";  
 	ViewData["Title"] = "Machine Index";
+	ViewData["Footer"] = "Views / Machines / Index";
 }
 
-@using Factory.Models;
-@model List<Factory.Models.Machine>;
+@model IEnumerable<Machine>
 
 <div class="text-center">
-    <h1 class="display-4">Machine Index</h1>
+	<h1 class="display-4">Machine Index</h1>
 </div>
-    
-@if (@Model.Count == 0)
-{
-  <h3>No items have been added yet!</h3>
-} 
 
-@foreach (Machine machine in Model)
+@if (!Model.Any())
 {
-  <li>@Html.ActionLink($"{machine.Description}", "Details", new { id = machine.MachineId }) | @machine.MachineName</li>
+	<p>No machines have been added yet. </p>
 }
-
-<p>@Html.ActionLink("Add new item", "Create")</p>
-
-<p>Views / Machines / Index</p>
+else
+{
+	<table class="table table-bordered table-striped">
+		<thead>
+		<tr>
+			<th>Machine Id:</th>
+			<th>Machine Name:</th>
+			<th>Description:</th>
+			<th>Engineer:</th>
+			<th>Actions</th>
+		</tr>
+		</thead>
+		<tbody>
+		@foreach (var obj in Model)
+		{
+			<tr>
+				<td>@obj.MachineId</td>
+				<td>@obj.MachineName</td>
+				<td>@obj.Description</td>
+				<td>engineer placeholder</td>
+				<td>
+					<a class="btn btn-primary" asp-area="" asp-controller="Machines" asp-action="Edit" asp-route-machineId="@obj.MachineId">Edit</a>
+					<a class="btn btn-danger" asp-area="" asp-controller="Engineers" asp-action="Delete" asp-route-machineId="@obj.MachineId">Delete</a>
+				</td>
+			</tr>
+		}
+		</tbody>
+	</table>
+}
+<a class="btn btn-primary" asp-area="" asp-controller="Machines" asp-action="Create">+ Add Machine</a>

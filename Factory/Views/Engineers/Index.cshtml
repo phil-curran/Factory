@@ -1,40 +1,43 @@
 @{
-    ViewData["Title"] = "Engineer Index";
-    ViewData["Footer"] = "Views / Engineers / Index";
+	ViewData["Title"] = "Engineer Index";
+	ViewData["Footer"] = "Views / Engineers / Index";
 }
 
 @model IEnumerable<Engineer>
 
 <div class="text-center">
-    <h1 class="display-4">Engineer Index</h1>
+	<h1 class="display-4">Engineer Index</h1>
 </div>
 
-@if (!@Model.Any())
+@if (!Model.Any())
 {
-  <p>No engineers have been added yet. </p>
+	<p>No engineers have been added yet. </p>
 }
 else
 {
-    <table class="table table-bordered table-striped">
-        <thead>
-        <tr>
-            <th>Employee Id:</th>
-            <th>Employee Name:</th>
-            <th>Hire Date:</th>
-        </tr>
-        </thead>
-        <tbody>
-        @foreach (var obj in Model)
-        {
-            <tr>
-                <td>@obj.EngineerId</td>
-                <td>@obj.EngineerName</td>
-                <td>@obj.CreationDate</td>
-            </tr>
-        }
-        </tbody>
-    </table>
+	<table class="table table-bordered table-striped">
+		<thead>
+		<tr>
+			<th>Employee Id:</th>
+			<th>Employee Name:</th>
+			<th>Hire Date:</th>
+			<th>Actions</th>
+		</tr>
+		</thead>
+		<tbody>
+		@foreach (var obj in Model)
+		{
+			<tr>
+				<td>@obj.EngineerId</td>
+				<td>@obj.EngineerName</td>
+				<td>@obj.CreationDate</td>
+				<td>
+					<a class="btn btn-primary" asp-area="" asp-controller="Engineers" asp-action="Edit" asp-route-engineerId="@obj.EngineerId">Edit</a>
+					<a class="btn btn-danger" asp-area="" asp-controller="Engineers" asp-action="Delete" asp-route-engineerId="@obj.EngineerId">Delete</a>
+				</td>
+			</tr>
+		}
+		</tbody>
+	</table>
 }
 <a class="btn btn-primary" asp-area="" asp-controller="Engineers" asp-action="Create">+ Add Engineer</a>
-<a class="btn btn-secondary" asp-area="" asp-controller="Machines" asp-action="Create">+ Add Machine</a>
-        
