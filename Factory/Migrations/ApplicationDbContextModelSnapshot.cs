@@ -42,23 +42,11 @@ namespace Factory.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    b.Property<DateTime>("CreationDate")
-                        .HasColumnType("datetime(6)");
-
-                    b.Property<string>("Description")
-                        .HasColumnType("longtext");
-
                     b.Property<int>("EngineerId")
                         .HasColumnType("int");
 
-                    b.Property<string>("EngineerName")
-                        .HasColumnType("longtext");
-
                     b.Property<int>("MachineId")
                         .HasColumnType("int");
-
-                    b.Property<string>("MachineName")
-                        .HasColumnType("longtext");
 
                     b.HasKey("EngineerMachineId");
 

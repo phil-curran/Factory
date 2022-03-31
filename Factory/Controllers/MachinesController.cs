@@ -1,6 +1,7 @@
 using Factory.Data;
 using Factory.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace Factory.Controllers;
 
@@ -44,10 +45,19 @@ public class MachinesController : Controller
         return RedirectToAction("Index");
     }
 
+    // public ActionResult Details(int id)
+    // {
+    //     var machine = _db.Machines.FirstOrDefault(machine => machine.MachineId == id);
+    //     return View(machine);
+    // }
+
     public ActionResult Details(int id)
     {
-        var machine = _db.Machines.FirstOrDefault(machine => machine.MachineId == id);
-        return View(machine);
+        var thisMachine = _db.Machines
+            .Include(machine => machine.JoinEntities)
+            .ThenInclude(join => join.Engineer)
+            .FirstOrDefault(machine => machine.MachineId == id);
+        return View(thisMachine);
     }
 
     public IActionResult Edit(int? machineId)

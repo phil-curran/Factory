@@ -11,8 +11,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Factory.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20220329015625_Update1")]
-    partial class Update1
+    [Migration("20220331013040_InitialCreate")]
+    partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -44,23 +44,11 @@ namespace Factory.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    b.Property<DateTime>("CreationDate")
-                        .HasColumnType("datetime(6)");
-
-                    b.Property<string>("Description")
-                        .HasColumnType("longtext");
-
                     b.Property<int>("EngineerId")
                         .HasColumnType("int");
 
-                    b.Property<string>("EngineerName")
-                        .HasColumnType("longtext");
-
                     b.Property<int>("MachineId")
                         .HasColumnType("int");
-
-                    b.Property<string>("MachineName")
-                        .HasColumnType("longtext");
 
                     b.HasKey("EngineerMachineId");
 
