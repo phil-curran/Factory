@@ -1,6 +1,7 @@
 using Factory.Data;
 using Factory.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 
 namespace Factory.Controllers;
@@ -14,16 +15,23 @@ public class MachinesController : Controller
         _db = db;
     }
 
-    public IActionResult Create()
+    public ActionResult Create()
     {
+        ViewBag.EngineerId = new SelectList(_db.Engineers, "EngineerId", "EngineerName");
         return View();
     }
 
     [HttpPost]
-    public IActionResult Create(Machine obj)
+    public ActionResult Create(Machine machine, int engineerId)
     {
-        _db.Machines.Add(obj);
+        _db.Machines.Add(machine);
         _db.SaveChanges();
+        if (engineerId != 0)
+        {
+            _db.EngineersMachines.Add(new EngineerMachine {EngineerId = engineerId, MachineId = machine.MachineId});
+            _db.SaveChanges();
+        }
+
         return RedirectToAction("Index");
     }
 
@@ -45,12 +53,6 @@ public class MachinesController : Controller
         return RedirectToAction("Index");
     }
 
-    // public ActionResult Details(int id)
-    // {
-    //     var machine = _db.Machines.FirstOrDefault(machine => machine.MachineId == id);
-    //     return View(machine);
-    // }
-
     public ActionResult Details(int id)
     {
         var thisMachine = _db.Machines
@@ -65,16 +67,23 @@ public class MachinesController : Controller
         if (machineId == null || machineId == 0) return NotFound();
         var machineFromDb = _db.Machines.Find(machineId);
         if (machineFromDb == null) return NotFound();
+        ViewBag.EngineerId = new SelectList(_db.Engineers, "EngineerId", "EngineerName");
         return View(machineFromDb);
     }
 
     [HttpPost]
-    public IActionResult Edit(Machine obj)
+    public IActionResult Edit(Machine obj, int engineerId)
     {
         if (ModelState.IsValid)
         {
             _db.Machines.Update(obj);
             _db.SaveChanges();
+            if (engineerId != 0)
+            {
+                _db.EngineersMachines.Update(new EngineerMachine {EngineerId = engineerId, MachineId = obj.MachineId});
+                _db.SaveChanges();
+            }
+
             TempData["success"] = "Machine updated successfully";
             return RedirectToAction("Index");
         }
