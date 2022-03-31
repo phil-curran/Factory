@@ -44,9 +44,10 @@ public class MachinesController : Controller
         return RedirectToAction("Index");
     }
 
-    public IActionResult Details()
+    public ActionResult Details(int id)
     {
-        return View();
+        var machine = _db.Machines.FirstOrDefault(machine => machine.MachineId == id);
+        return View(machine);
     }
 
     public IActionResult Edit(int? machineId)
