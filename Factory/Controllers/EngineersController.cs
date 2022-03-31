@@ -1,6 +1,7 @@
 using Factory.Data;
 using Factory.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace Factory.Controllers;
 
@@ -44,9 +45,13 @@ public class EngineersController : Controller
         return RedirectToAction("Index");
     }
 
-    public IActionResult Details()
+    public ActionResult Details(int id)
     {
-        return View();
+        var thisEngineer = _db.Engineers
+            .Include(engineer => engineer.JoinEntities)
+            .ThenInclude(join => join.Machine)
+            .FirstOrDefault(engineer => engineer.EngineerId == id);
+        return View(thisEngineer);
     }
 
     public IActionResult Edit(int? engineerId)

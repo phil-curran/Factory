@@ -1,5 +1,3 @@
-@using Factory.Models;
-
 @{
 	ViewData["Title"] = "Machine Details";
 	ViewData["Footer"] = "Views / Machines / Details";
@@ -12,12 +10,6 @@
 
 <hr/>
 
-@* @if (Model.Count() != 0) *@
-@* { *@
-@* 	<p>No machines have been added yet.</p> *@
-@* } *@
-@* else *@
-@* { *@
 <table class="table table-bordered table-striped">
 	<thead>
 	<tr>
@@ -29,8 +21,6 @@
 	</tr>
 	</thead>
 	<tbody>
-	@* @foreach (var obj in Model) *@
-	@* { *@
 	<tr>
 		<td>@Model.MachineId</td>
 		<td>@Model.MachineName</td>
@@ -41,7 +31,5 @@
 			<a class="btn btn-danger" asp-area="" asp-controller="Machines" asp-action="Delete" asp-route-machineId="@Model.MachineId">Delete</a>
 		</td>
 	</tr>
-	@* } *@
 	</tbody>
 </table>
-@* } *@
