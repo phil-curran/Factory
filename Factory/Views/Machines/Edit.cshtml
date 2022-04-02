@@ -13,11 +13,21 @@
 
 @using (Html.BeginForm())
 {
-	@Html.LabelFor(model => model.MachineName)
-	@Html.TextBoxFor(model => model.MachineName)
-	@Html.LabelFor(model => model.Description)
-	@Html.TextBoxFor(model => model.Description)
-	@Html.Label("Select Engineer")
-	@Html.DropDownList("EngineerId")
-	<input type="submit" value="Edit Machine" class="btn btn-primary"/>
+	<div class="row">
+		<div class="col-3">
+			@Html.LabelFor(model => model.MachineName)
+			@Html.TextBoxFor(model => model.MachineName)
+		</div>
+		<div class="col-3">
+			@Html.LabelFor(model => model.Description)
+			@Html.TextBoxFor(model => model.Description)
+		</div>
+		<div class="col-3">
+			@Html.Label("Select Engineer")
+			@Html.DropDownList("EngineerId")
+		</div>
+		<div class="col-3">
+			<input type="submit" value="Edit Machine" class="btn btn-primary"/>
+		</div>
+	</div>
 }
