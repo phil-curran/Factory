@@ -3,7 +3,7 @@
 	ViewData["Footer"] = "Views / Machines / Details";
 }
 
-@model ToDoList.Models.Item
+@model Factory.Models.Machine
 
 <div class="text-center">
 	<h1 class="display-4">Machine Details</h1>
@@ -17,7 +17,7 @@
 		<th>Machine Id:</th>
 		<th>Machine Name:</th>
 		<th>Description:</th>
-		<th>Engineer Assigned:</th>
+		<th>Engineer(s) Assigned:</th>
 		<th>Actions</th>
 	</tr>
 	</thead>
@@ -26,7 +26,12 @@
 		<td>@Model.MachineId</td>
 		<td>@Model.MachineName</td>
 		<td>@Model.Description</td>
-		<td>Engineer</td>
+		<td>
+			  @foreach(var join in Model.JoinEntities)
+              {
+                <li>@join.Engineer.EngineerName</li>
+              }
+		</td>
 		<td>
 			<a class="btn btn-primary" asp-area="" asp-controller="Machines" asp-action="Edit" asp-route-machineId="@Model.MachineId">Edit</a>
 			<a class="btn btn-danger" asp-area="" asp-controller="Machines" asp-action="Delete" asp-route-machineId="@Model.MachineId">Delete</a>
