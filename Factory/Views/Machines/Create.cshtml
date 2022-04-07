@@ -3,11 +3,13 @@
 	ViewData["Footer"] = "Views / Machines / Create";
 }
 
-@model Machine
+@model Factory.Models.Machine
 
 <div class="text-center">
 	<h1 class="display-4">Create Machine</h1>
 </div>
+
+<hr/>
 
 @using (Html.BeginForm())
 {
@@ -15,7 +17,7 @@
 	@Html.TextBoxFor(model => model.MachineName)
 	@Html.LabelFor(model => model.Description)
 	@Html.TextBoxFor(model => model.Description)
-	@Html.Label("Select Engineer")
-	@Html.DropDownList("EngineerId")
+	@*@Html.Label("Select Engineer")
+	@Html.DropDownList("EngineerId")*@
 	<input type="submit" value="Add Machine" class="btn btn-primary"/>
 }

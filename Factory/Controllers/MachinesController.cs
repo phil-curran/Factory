@@ -15,26 +15,25 @@ public class MachinesController : Controller
         _db = db;
     }
 
-    public ActionResult Create()
+    public IActionResult Create()
     {
-        ViewBag.EngineerId = new SelectList(_db.Engineers, "EngineerId", "EngineerName");
+        ViewBag.EngineerId = new SelectList(_db.Engineers, "EngineerId", "Name");
         return View();
     }
 
     [HttpPost]
-    public ActionResult Create(Machine machine, int engineerId)
+    public IActionResult Create(Machine machine, int engineerId)
     {
         _db.Machines.Add(machine);
         _db.SaveChanges();
         if (engineerId != 0)
         {
-            _db.EngineersMachines.Add(new EngineerMachine {EngineerId = engineerId, MachineId = machine.MachineId});
+            _db.EngineersMachines.Add(new() { EngineerId = engineerId, MachineId = machine.MachineId });
             _db.SaveChanges();
         }
-
         return RedirectToAction("Index");
     }
-
+    
     public IActionResult Delete(int machineId)
     {
         if (machineId == 0) return NotFound();
@@ -53,7 +52,7 @@ public class MachinesController : Controller
         return RedirectToAction("Index");
     }
 
-    public ActionResult Details(int id)
+    public IActionResult Details(int id)
     {
         var thisMachine = _db.Machines
             .Include(machine => machine.JoinEntities)
@@ -83,11 +82,9 @@ public class MachinesController : Controller
                 _db.EngineersMachines.Update(new EngineerMachine {EngineerId = engineerId, MachineId = obj.MachineId});
                 _db.SaveChanges();
             }
-
             TempData["success"] = "Machine updated successfully";
             return RedirectToAction("Index");
         }
-
         return View(obj);
     }
 

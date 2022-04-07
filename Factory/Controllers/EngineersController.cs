@@ -45,7 +45,7 @@ public class EngineersController : Controller
         return RedirectToAction("Index");
     }
 
-    public ActionResult Details(int id)
+    public IActionResult Details(int id)
     {
         var thisEngineer = _db.Engineers
             .Include(engineer => engineer.JoinEntities)
