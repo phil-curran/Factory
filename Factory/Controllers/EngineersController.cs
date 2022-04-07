@@ -29,7 +29,7 @@ public class EngineersController : Controller
 
     public IActionResult Delete(int engineerId)
     {
-        if (engineerId == null || engineerId == 0) return NotFound();
+        if (engineerId == 0) return NotFound();
         var engineerFromDb = _db.Engineers.Find(engineerId);
         if (engineerFromDb == null) return NotFound();
         return View(engineerFromDb);

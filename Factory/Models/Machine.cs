@@ -1,14 +1,15 @@
-namespace Factory.Models;
-
-public class Machine
+namespace Factory.Models
 {
-    public Machine()
+    public class Machine
     {
-        JoinEntities = new HashSet<EngineerMachine>();
-    }
+        public Machine()
+        {
+            this.JoinEntities = new HashSet<EngineerMachine>();
+        }
 
-    public int MachineId { get; set; }
-    public string MachineName { get; set; }
-    public string Description { get; set; }
-    public virtual ICollection<EngineerMachine> JoinEntities { get; set; }
+        public int MachineId { get; set; }
+        public string MachineName { get; set; }
+        public string Description { get; set; }
+        public virtual ICollection<EngineerMachine> JoinEntities { get; }
+    }
 }

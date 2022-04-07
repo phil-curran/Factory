@@ -1,14 +1,15 @@
-namespace Factory.Models;
-
-public class Engineer
+namespace Factory.Models
 {
-    public Engineer()
+    public class Engineer
     {
-        JoinEntities = new HashSet<EngineerMachine>();
-    }
+        public Engineer()
+        {
+            this.JoinEntities = new HashSet<EngineerMachine>();
+        }
 
-    public int EngineerId { get; set; }
-    public string EngineerName { get; set; }
-    public DateTime CreationDate { get; set; }
-    public virtual ICollection<EngineerMachine> JoinEntities { get; set; }
+        public int EngineerId { get; set; }
+        public string EngineerName { get; set; }
+        public DateTime CreationDate { get; set; }
+        public virtual ICollection<EngineerMachine> JoinEntities { get; set; }
+    }
 }

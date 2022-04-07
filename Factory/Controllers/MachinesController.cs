@@ -37,7 +37,7 @@ public class MachinesController : Controller
 
     public IActionResult Delete(int machineId)
     {
-        if (machineId == null || machineId == 0) return NotFound();
+        if (machineId == 0) return NotFound();
         var machineFromDb = _db.Machines.Find(machineId);
         if (machineFromDb == null) return NotFound();
         return View(machineFromDb);

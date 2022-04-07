@@ -32,7 +32,7 @@ else
 		{
 			<tr>
 				<td>@obj.MachineId</td>
-				<td>@obj.MachineName</td>
+				<td>@Html.ActionLink($"{@obj.MachineName}", "Details", new {id = @obj.MachineId})</td>
 				<td>@obj.Description</td>
 				<td>engineer placeholder</td>
 				<td>
