@@ -93,7 +93,6 @@ public class MachinesController : Controller
 
     public IActionResult Index()
     {
-        IEnumerable<Machine> machineList = _db.Machines;
-        return View(machineList);
+        return View(_db.Machines.ToList());
     }
 }
