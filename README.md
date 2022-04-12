@@ -7,7 +7,7 @@
 ## Technologies Used
 
 * C#
-* .nET 6.0
+* .Net 6.0
 * MySql 8.0 & MySql Workbench
 * Bootstrap
 * JetBrains Rider
@@ -42,7 +42,7 @@ An MVC web app that manages relationships between two different datasets.  Creat
 
 ## Known Bugs
 
-* There are some issues getting data across models.  Within the various Machines views, a drop-down menu will show available Engineers, or the Engineer a machine is licensed to, but it's not possible at this point to list machines per Engineer.
+* None
 
 ## Contact Me
 
