@@ -3,8 +3,9 @@
 	ViewData["Footer"] = "Views / Machines / Index";
 }
 
-@model IEnumerable<Machine>
-@* @model Factory.Models.Machine *@
+@model System.Collections.Generic.List<Factory.Models.Machine>
+
+@using Factory.Models;
 
 <div class="text-center">
 	<h1 class="display-4">Machine Index</h1>
@@ -24,21 +25,26 @@ else
 			<th>Machine Id:</th>
 			<th>Machine Name:</th>
 			<th>Description:</th>
-			<th>Engineer:</th>
+			<th>Engineer(s) Assigned:</th>
 			<th>Actions</th>
 		</tr>
 		</thead>
 		<tbody>
-		@foreach (var obj in Model)
+		@foreach (Machine machine in Model)
 		{
 			<tr>
-				<td>@obj.MachineId</td>
-				<td>@obj.MachineName</td>
-				<td>@obj.Description</td>
-				<td>@Html.ActionLink($"Details", "Details", new {id = @obj.MachineId})</td>
+				<td>@machine.MachineId</td>
+				<td>@Html.ActionLink(@machine.MachineName, "Details", new {id = @machine.MachineId})</td>			
+				<td>@machine.Description</td>
 				<td>
-					<a class="btn btn-primary" asp-area="" asp-controller="Machines" asp-action="Edit" asp-route-machineId="@obj.MachineId">Edit</a>
-					<a class="btn btn-danger" asp-area="" asp-controller="Machines" asp-action="Delete" asp-route-machineId="@obj.MachineId">Delete</a>
+					@foreach(var join in machine.JoinEntities)
+					{
+					  <p>@join.Engineer.EngineerName</p>
+					}
+				</td>
+				<td>
+					<a class="btn btn-primary" asp-area="" asp-controller="Machines" asp-action="Edit" asp-route-machineId="@machine.MachineId">Edit</a>
+					<a class="btn btn-danger" asp-area="" asp-controller="Machines" asp-action="Delete" asp-route-machineId="@machine.MachineId">Delete</a>
 				</td>
 			</tr>
 		}

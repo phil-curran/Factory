@@ -78,7 +78,10 @@ public class EngineersController : Controller
 
     public IActionResult Index()
     {
-        IEnumerable<Engineer> engineerList = _db.Engineers;
-        return View(engineerList);
+        var engineers = _db.Engineers
+            .Include(engineer => engineer.JoinEntities)
+            .ThenInclude(join => join.Machine)
+            .ToList();
+        return View(engineers);
     }
 }

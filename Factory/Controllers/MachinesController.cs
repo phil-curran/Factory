@@ -1,10 +1,10 @@
-using Factory.Data;
-using Factory.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
-using static Microsoft.AspNetCore.Mvc.Rendering.SelectListItem;
-
+using System.Linq;
+using System.Collections.Generic;
+using Factory.Data;
+using Factory.Models;
 
 namespace Factory.Controllers;
 
@@ -92,6 +92,11 @@ public class MachinesController : Controller
 
     public IActionResult Index()
     {
-        return View(_db.Machines.ToList());
+        var machines = _db.Machines
+                .Include(machine => machine.JoinEntities)
+                .ThenInclude(join => join.Engineer)
+                .ToList();
+
+        return View(machines);
     }
 }

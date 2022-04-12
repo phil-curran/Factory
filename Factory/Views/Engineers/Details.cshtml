@@ -3,8 +3,7 @@
 	ViewData["Footer"] = "Views / Engineers / Details";
 }
 
-@* @model IEnumerable<Engineer> *@
-@model Engineer
+@model Factory.Models.Engineer
 
 <div class="text-center">
 	<h1 class="display-4">Engineer Details</h1>
@@ -15,9 +14,10 @@
 <table class="table table-bordered table-striped">
 	<thead>
 	<tr>
-		<th>Employee Id:</th>
-		<th>Employee Name:</th>
+		<th>Engineer Id:</th>
+		<th>Engineer Name:</th>
 		<th>Hire Date:</th>
+		<th>Machines(s) Assigned:</th>
 		<th>Actions</th>
 	</tr>
 	</thead>
@@ -27,8 +27,14 @@
 		<td>@Model.EngineerName</td>
 		<td>@Model.CreationDate</td>
 		<td>
-			<a class="btn btn-primary" asp-area="" asp-controller="Engineers" asp-action="Edit" asp-route-engineerId="@Model.EngineerId">Edit</a>
-			<a class="btn btn-danger" asp-area="" asp-controller="Engineers" asp-action="Delete" asp-route-engineerId="@Model.EngineerId">Delete</a>
+			  @foreach(var join in Model.JoinEntities)
+              {
+                <li>@join.Machine.MachineName</li>
+              }
+		</td>
+		<td>
+			<a class="btn btn-primary" asp-area="" asp-controller="Engineers" asp-action="Edit" asp-route-EngineerId="@Model.EngineerId">Edit</a>
+			<a class="btn btn-danger" asp-area="" asp-controller="Engineers" asp-action="Delete" asp-route-EngineerId="@Model.EngineerId">Delete</a>
 		</td>
 	</tr>
 	</tbody>
